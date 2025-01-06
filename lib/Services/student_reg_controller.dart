@@ -16,4 +16,6 @@ class StudentRegisterController extends GetxController {
     }
   }
   
+  
+
 }

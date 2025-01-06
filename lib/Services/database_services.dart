@@ -5,21 +5,19 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:studentregisterapp/models/student_detail_model.dart';
 
 class DatabaseController extends GetxController {
-  
   var stdBucket = <StudentModel>[].obs;
 
-
- @override
+  @override
   void onInit() {
     super.onInit();
-    getAllSTD(); // Fetch all students when the controller is initialized
+    getAllSTD(); 
     log('DatabaseController initialized, fetching all students');
   }
 
   Future addDataIntoDB(StudentModel stdModel) async {
     var box = await Hive.openBox<StudentModel>("StudentManagementDB");
     await box.add(stdModel);
-     log('Data added: ${stdModel.toString()}');
+    log('Data added: ${stdModel.toString()}');
     getAllSTD();
   }
 
@@ -28,10 +26,17 @@ class DatabaseController extends GetxController {
     stdBucket.assignAll(box.values.toList());
     log(stdBucket.length.toString());
   }
+
   Future<void> deleteStudent(int index) async {
-  var box = await Hive.openBox<StudentModel>("StudentManagementDB");
-  await box.deleteAt(index); // Delete the student at the given index
-  log('Student deleted at index $index');
-  getAllSTD(); // Refresh the list
-}
+    var box = await Hive.openBox<StudentModel>("StudentManagementDB");
+    await box.deleteAt(index);
+    log('Student deleted at index $index');
+    getAllSTD();
+  }
+
+  Future<void> updateStudent(int key, StudentModel studentModel) async {
+    var box = await Hive.openBox<StudentModel>("StudentManagementDB");
+   await    box.put(key, studentModel);
+    await getAllSTD();
+  }
 }

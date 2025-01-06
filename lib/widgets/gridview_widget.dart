@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:studentregisterapp/Services/database_services.dart';
+import 'package:studentregisterapp/screens/edit_student_details_screen.dart';
 import 'package:studentregisterapp/screens/student_total_info_screen.dart';
 
 class GridviewWidget extends StatelessWidget {
@@ -109,7 +110,9 @@ class GridviewWidget extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Get.to(() => EditStudentDetailsScreen(student:dbController.stdBucket[itemIndex] ,studentKey:dbController.stdBucket[itemIndex].key ,));
+                                    },
                                     icon: const Icon(
                                       Icons.edit,
                                       color: Colors.black,
@@ -126,11 +129,13 @@ class GridviewWidget extends StatelessWidget {
                                         onConfirm: () {
                                           dbController.deleteStudent(itemIndex);
                                           Get.back(); // Close the dialog
-                                          Get.showSnackbar(GetSnackBar(duration: Duration(seconds: 3),backgroundColor: Colors.green,borderRadius: 10,
+                                          Get.showSnackbar(GetSnackBar(
+                                            duration: Duration(seconds: 3),
+                                            backgroundColor: Colors.green,
+                                            borderRadius: 10,
                                             title: 'delete',
                                             message: 'successfully deleted',
                                           ));
-                                         
                                         },
                                       );
                                     },
