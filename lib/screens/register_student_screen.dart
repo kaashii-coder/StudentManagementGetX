@@ -75,7 +75,7 @@ class StudentRegisterScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         fillColor: Color.fromARGB(255, 210, 208, 208),
                         filled: true,
-                        hintText: 'Typing...Name',
+                        hintText: 'Type...Name',
                         hintStyle: const TextStyle(
                             color: Color.fromARGB(255, 60, 58, 58)),
                         border: OutlineInputBorder(
@@ -104,7 +104,7 @@ class StudentRegisterScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         fillColor: Color.fromARGB(255, 210, 208, 208),
                         filled: true,
-                        hintText: 'Typing...Batch',
+                        hintText: 'Type...Batch',
                         hintStyle: const TextStyle(
                             color: Color.fromARGB(255, 60, 58, 58)),
                         border: OutlineInputBorder(
@@ -133,7 +133,7 @@ class StudentRegisterScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         fillColor: Color.fromARGB(255, 210, 208, 208),
                         filled: true,
-                        hintText: 'Typing...Address',
+                        hintText: 'Type...Address',
                         hintStyle: const TextStyle(
                             color: Color.fromARGB(255, 60, 58, 58)),
                         border: OutlineInputBorder(
@@ -162,7 +162,7 @@ class StudentRegisterScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         fillColor: Color.fromARGB(255, 210, 208, 208),
                         filled: true,
-                        hintText: 'Typing...Skill',
+                        hintText: 'Type...Skill',
                         hintStyle: const TextStyle(
                             color: Color.fromARGB(255, 60, 58, 58)),
                         border: OutlineInputBorder(
@@ -191,7 +191,7 @@ class StudentRegisterScreen extends StatelessWidget {
                           submitButtonFuction();
                           Get.back();
                         },
-                        child: Text('Submit')),
+                        child: Text('Submit',style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)))),
                   ],
                 ),
               ),

@@ -20,7 +20,7 @@ class ClubTagWidget extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                'Flutter',
+                detailObj.domain,
                 style: GoogleFonts.roboto(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
